@@ -2,4 +2,33 @@
 
 https://developer.atlassian.com/blog/2015/11/scripting-with-node/#packaging-shell-commands
 
-* 
+* npm install -g gives npm ERR! eisdir EISDIR: illegal operation on a directory, read
+
+npm install -g gives npm ERR! eisdir EISDIR: illegal operation on a directory, read
+npm install global gives npm ERR! eisdir EISDIR: illegal operation on a directory, read
+
+rm -rf node_modules
+npm cache clean
+npm install
+
+#+BEGIN_SRC verbatim
+E:\pdev\taylormonacelli\nodejs-practice>npm install -g
+npm ERR! addLocal Could not install E:\pdev\taylormonacelli\nodejs-practice
+npm ERR! Windows_NT 6.1.7601
+npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g"
+npm ERR! node v6.6.0
+npm ERR! npm  v3.10.3
+npm ERR! code EISDIR
+npm ERR! errno -4068
+npm ERR! syscall read
+
+npm ERR! eisdir EISDIR: illegal operation on a directory, read
+npm ERR! eisdir This is most likely not a problem with npm itself
+npm ERR! eisdir and is related to npm not being able to find a package.json in
+npm ERR! eisdir a package you are trying to install.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     E:\pdev\taylormonacelli\nodejs-practice\npm-debug.log
+
+E:\pdev\taylormonacelli\nodejs-practice>
+#+END_SRC
